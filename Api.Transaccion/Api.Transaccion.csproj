@@ -11,7 +11,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Services\" />
+    <ProjectReference Include="..\Api.Businness\Api.Businness.csproj" />
+    <ProjectReference Include="..\Api.Entity\Api.Entity.csproj" />
+    <ProjectReference Include="..\Api.Logger\Api.Logger.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,3 +1,7 @@
+using Api.Businness.Manager;
+using Api.Logger;
+using Api.Transaccion.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -7,6 +11,13 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddTransient<IManagerCuentas, ManagerCuentas>();
+builder.Services.AddTransient<IServiceCuentas, ServiceCuentas>();
+
+builder.Services.AddTransient<IManagerMovimientos, ManagerMovimientos>();
+builder.Services.AddTransient<IServiceMovimientos, ServiceMovimientos>();
+
+builder.Services.AddLogger();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -17,9 +28,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
 app.UseAuthorization();
-
 app.MapControllers();
 
 app.Run();

@@ -7,8 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Manager\" />
-    <Folder Include="Repository\" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="7.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Api.DataAccess\Api.DataAccess.csproj" />
+    <ProjectReference Include="..\Api.Entity\Api.Entity.csproj" />
+    <ProjectReference Include="..\Api.Logger\Api.Logger.csproj" />
   </ItemGroup>
 
 </Project>
