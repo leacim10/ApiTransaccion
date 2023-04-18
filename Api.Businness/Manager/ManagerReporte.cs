@@ -55,11 +55,14 @@ namespace Api.Businness.Manager
                 //SelectPdf.PdfDocument doc = converter.ConvertHtmlString(htmlCode);
                 SelectPdf.PdfDocument doc = converter.ConvertHtmlString("<h1>PDF PRUEBA</h1>" +
                     $"<h2>Cuenta =>{JsonConvert.SerializeObject(response)}</h2>");
-                doc.Save($"Cuenta-{DateTime.Now.ToString("HHmmss")}.pdf");
+
+                //doc.Save($"Cuenta-{DateTime.Now.ToString("HHmmss")}.pdf");
+                byte[] data = doc.Save();
+                var result = Convert.ToBase64String(data );
                 doc.Close();
+                reporte.pdfBase64 = result;
                 #endregion
 
-                reporte.pdfBase64 = "";
                 return reporte;
             }
             catch (Exception ex)
