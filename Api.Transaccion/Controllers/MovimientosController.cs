@@ -2,12 +2,14 @@
 using Api.Entity.Request;
 using Api.Entity.Response;
 using Api.Transaccion.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Transaccion.Controllers
 {
     [Route("api/[Controller]")]
     [ApiController]
+    [Authorize]
     public class MovimientosController : ControllerBase
     {
         private readonly IServiceMovimientos _service;

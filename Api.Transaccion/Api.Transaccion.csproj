@@ -14,6 +14,7 @@
     <ProjectReference Include="..\Api.Businness\Api.Businness.csproj" />
     <ProjectReference Include="..\Api.Entity\Api.Entity.csproj" />
     <ProjectReference Include="..\Api.Logger\Api.Logger.csproj" />
+    <ProjectReference Include="..\Api.Security\Api.Security.csproj" />
   </ItemGroup>
 
 </Project>

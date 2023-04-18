@@ -5,15 +5,17 @@ VisualStudioVersion = 17.5.33424.131
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.Transaccion", "Api.Transaccion\Api.Transaccion.csproj", "{3A094215-ECB0-419A-9D29-723725C3AD2A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.Businness", "Api.Businness\Api.Businness.csproj", "{67C62529-0860-42C1-AF76-5DD72BCCED2B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.Businness", "Api.Businness\Api.Businness.csproj", "{67C62529-0860-42C1-AF76-5DD72BCCED2B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.DataAccess", "Api.DataAccess\Api.DataAccess.csproj", "{02A762A8-5A53-40E6-81D2-30972682C326}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.DataAccess", "Api.DataAccess\Api.DataAccess.csproj", "{02A762A8-5A53-40E6-81D2-30972682C326}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.Entity", "Api.Entity\Api.Entity.csproj", "{84F664D0-6D95-4DB8-96D2-F327354D363D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.Entity", "Api.Entity\Api.Entity.csproj", "{84F664D0-6D95-4DB8-96D2-F327354D363D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.Common", "Api.Common\Api.Common.csproj", "{CA9BF65A-7F91-4477-AE94-0DFF524E2CBA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.Common", "Api.Common\Api.Common.csproj", "{CA9BF65A-7F91-4477-AE94-0DFF524E2CBA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.Logger", "Api.Logger\Api.Logger.csproj", "{FEF6E1FB-1118-40C3-B0A0-3444B6FED927}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.Logger", "Api.Logger\Api.Logger.csproj", "{FEF6E1FB-1118-40C3-B0A0-3444B6FED927}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.Security", "Api.Security\Api.Security.csproj", "{3AFFAE32-08E5-4DB7-BF08-DA2E0F1D600C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{FEF6E1FB-1118-40C3-B0A0-3444B6FED927}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FEF6E1FB-1118-40C3-B0A0-3444B6FED927}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FEF6E1FB-1118-40C3-B0A0-3444B6FED927}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3AFFAE32-08E5-4DB7-BF08-DA2E0F1D600C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AFFAE32-08E5-4DB7-BF08-DA2E0F1D600C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AFFAE32-08E5-4DB7-BF08-DA2E0F1D600C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AFFAE32-08E5-4DB7-BF08-DA2E0F1D600C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

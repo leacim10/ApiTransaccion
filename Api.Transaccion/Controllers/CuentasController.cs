@@ -3,11 +3,13 @@ using Api.Entity.Response;
 using Microsoft.AspNetCore.Mvc;
 using Api.Entity.Entity;
 using Api.Entity.Request;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Api.Transaccion.Controllers
 {
     [Route("api/[Controller]")]
     [ApiController]
+    [Authorize]
     public class CuentasController : ControllerBase
     {
         private readonly IServiceCuentas _service;
