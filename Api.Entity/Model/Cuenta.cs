@@ -13,5 +13,6 @@ namespace Api.Entity.Entity
         public string moneda { get; set; }
         public string nombre { get; set; }
         public decimal saldo { get; set; }
+        public object JsonConvert { get; set; }
     }
 }

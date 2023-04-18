@@ -56,6 +56,9 @@ builder.Services.AddTransient<IServiceCuentas, ServiceCuentas>();
 builder.Services.AddTransient<IManagerMovimientos, ManagerMovimientos>();
 builder.Services.AddTransient<IServiceMovimientos, ServiceMovimientos>();
 
+builder.Services.AddTransient<IManagerReporte, ManagerReporte>();
+builder.Services.AddTransient<IServiceReporte, ServiceReporte>();
+
 builder.Services.AddTransient<IManagerSecurity, ManagerSecurity>();
 
 builder.Services.AddLogger();
