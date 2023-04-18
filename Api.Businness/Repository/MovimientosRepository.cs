@@ -5,6 +5,7 @@ using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,7 +28,8 @@ namespace Api.Businness.Repository
 
             _dataAccess = new Api.DataAccess.DataAccess(_dataBase);
         }
-
+        /*
+        #region MySql
         public bool addMovimiento(Movimiento movimientos)
         {
             try
@@ -73,5 +75,56 @@ namespace Api.Businness.Repository
                 throw new Exception($"[selectMovimiento] Error: {ex.Message}");
             }
         }
+        #endregion
+        */
+
+
+        #region SqlServer
+        public bool addMovimiento(Movimiento movimientos)
+        {
+            try
+            {
+                List<SqlParameter> lstParameter = new List<SqlParameter>();
+                lstParameter.Add(new SqlParameter("@_nroCuenta_VC", movimientos.nroCuenta));
+                lstParameter.Add(new SqlParameter("@_fecha_DT", movimientos.fecha));
+                lstParameter.Add(new SqlParameter("@_tipo_CH", movimientos.tipo));
+                lstParameter.Add(new SqlParameter("@_importe_DC", movimientos.importe));
+
+                return _dataAccess.ExecuteStoredProcedure("dbPruebaSql", "prueba.addMovimiento", lstParameter);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"[addMovimiento] Error: {ex.Message}");
+            }
+        }
+
+        public List<Movimiento> selectMovimiento(string nroCuenta)
+        {
+            try
+            {
+                List<Movimiento> listMovimientos = new List<Movimiento>();
+                List<SqlParameter> lstParameter = new List<SqlParameter>();
+                lstParameter.Add(new SqlParameter("@_nroCuenta_VC", nroCuenta));
+                DataTable result = _dataAccess.SelectStoredProcedire("dbPruebaSql", "prueba.selectMovimiento_byNroCuenta", lstParameter);
+                if (result.Rows.Count > 0)
+                {
+                    foreach (DataRow row in result.Rows)
+                    {
+                        Movimiento movimientos = new Movimiento();
+                        movimientos.idMovimiento = int.Parse(row["idMovimiento_IN"].ToString());
+                        movimientos.nroCuenta = row["nroCuenta_VC"].ToString();
+                        movimientos.fecha = DateTime.Parse(row["fecha_DT"].ToString());
+                        movimientos.tipo = row["tipo_CH"].ToString();
+                        movimientos.importe = decimal.Parse(row["importe_DC"].ToString());
+                    }
+                }
+                return listMovimientos;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"[selectMovimiento] Error: {ex.Message}");
+            }
+        }
+        #endregion
     }
 }
